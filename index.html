@@ -5,6 +5,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		<title> Music Nostalgia </title>
 	</head>
 
@@ -17,9 +18,8 @@
 				<input type="checkbox" id="show-menu" value="button" class="hidden">
 				<ul id="menu" role="menu">
 					<li id="home" role="home"><a href="#">Home</a></li>
-					<li id="album" role="find-artical"><a href="#search">The Ablums</a></li>
-					<li role="contact"><a href="#contact-me">The Band</a></li>
-					<li role="about" ><a href="#about">About Us</a></li>
+					<li id="album" role="find-artical"><a href="#">Ablums</a></li>
+					<li id="band" role="theband"><a href="#">Band</a></li>
 				</ul>
 			</nav>
 
@@ -36,9 +36,11 @@
 				<section class="full-width-para" id="about" role="about-section">
 					<!-- about us section -->
 					<div class="inside-full">
-						<h3>Welcome Page</h3>
+						<h3>HOME</h3>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+							Welcome to our Band home page, Where you can get all the latest news on what we are doing. Take a look at the links above to see our Albums and more about us.
+							<br/><br/>
+							Here You will be able to access our spotify libary, this has been accessed through a Spotify's API service! This has been done using OAuth Technology and AJAX functionality.  
 						</p>
 					</div>	
 
@@ -50,8 +52,79 @@
 					<!-- section-daily -->
 					<div class="contain">
 						<p>
-							Why do we use it?
-							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+							Recently we have a new release:
+							<br/>
+							Tracks Include:
+							<br/>
+							Nightmanager<br/>
+							Why you such a sunt <br/>
+							Flannel Adagam<br/>
+
+						</p>
+					</div>
+
+				</section>
+
+				<section class="half-width-image">
+					<img src="assets/background.jpeg" alt="swimming" id="front_img" role="lead_singer" >
+
+				</section>
+
+				<section id="education" role="more-info">
+				<!-- mre informatoin -->
+					
+				</section>
+			</div>
+
+			<div id="album_page">
+				<section class="full-width-image" role="main-image">
+					<!-- search section -->
+					<div class="search-full">	
+					</div>	
+				</section>
+
+				<section class="full-width-para" id="about" role="about-section">
+					<!-- about us section -->
+					<div class="inside-full">
+						<h1>MY ALBUMS</h1>
+						<p>
+							<div class="artistInfo">
+
+							</div>  
+						</p>
+					</div>	
+
+
+				</section>
+
+			</div>
+			
+
+			<div id="band_page">
+				<section class="full-width-image" role="main-image">
+					<!-- search section -->
+					<div class="search-full">	
+					</div>	
+				</section>
+
+				<section class="full-width-para" id="about" role="about-section">
+					<!-- about us section -->
+					<div class="inside-full">
+						<h3>Band</h3>
+						<p>
+							1
+						</p>
+					</div>	
+
+
+				</section>
+
+
+				<section class="half-width-para" role="daily-section">
+					<!-- section-daily -->
+					<div class="contain">
+						<p>
+							2
 						</p>
 					</div>
 
@@ -67,57 +140,12 @@
 					<div class="inside-full">
 						<h3>What is Lorem Ipsum?</h3>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-							Why do we use it?
-							It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-							Where does it come from?
-							Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-							The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+							3
 						</p>
 					</div>
 				</section>
 
-
-				<section id="about-me" role="about-me">
-					<!-- about me (about) -->
-					 <img src="./assets/image-2.jpeg" alt="swimming" id="fire" >
-
-				</section>
-
-
-				<section id="contact-me" role="contact">
-					<div class="inside-full">
-						<h2>Contact Us</h2>
-						<!-- contact me (mailto) -->
-						<form method="post" action="http://lacedeamon.spartaglobal.com/contactform" role="contact-form">
-							<label for="name">Name</label><br>
-							<input type="text" name="name" id="name" role="name" /><br>
-
-							<label for="addressee">Address</label><br>
-							<input type="text" name="addressee" id="addressee" role="address"><br>
-
-							<label for="email">Email:</label><br>
-							<input type="email" name="email" id="email" role="email"<br>
-
-							<label for="message">Message:</label><br>
-							<textarea cols="40" rows="8" name="message" id="message" tabindex="6" role="add-message"></textarea><br>
-
-							<input type="submit" name="submit" value="Save" role=button class="button"/>
-						</form>
-					</div>		
-
-
-				</section>
 			</div>
-			<div id="album_page">
-				mhvjh,bkj
-			</div>
-
-
 		</main>	
 
 
@@ -125,16 +153,6 @@
 
 		<footer role="footer">
 			<br/>
-			<!-- social image links  -->
-			<a href="http://linkedin.com">
-				<img src="./assets/linkedin.png" alt="linked-in" id="linked-in" class="image" role="linkedin">
-			</a>
-			<a href="http://twitter.com">	
-				<img src="./assets/twitter.png" alt="twitter" id="twitter" class="image" role="twitter" >
-			</a>
-			<a href="http://www.facebook.com">
-				<img src="./assets/facebook.png" alt="facebook" id="facebook" class="image" role="facebook">
-			</a>	
 			<hr>
 			<p>Jack Kenna </p>
 		</footer>
