@@ -1,52 +1,51 @@
+//Set the object 
 var MN = MN || {};
 
-window.addEventListener("load", function(){ 
-  MN.init();
-
+//On load start initialize
+$(function() {  
+	MN.init();
 });
 
-//var clicked = false;
 
+//Initialize startup functions
 MN.init = function(){
 	this.domElementsSetup();
 	this.addEventListener();
-}
+};
 
-
+//Elements from the DOM setup 
 MN.domElementsSetup = function(){
-	this.home = document.getElementById("home_page");
-  	this.lis = Array.from(document.getElementsByTagName("li"));
+  	this.$lis = $("li");
 
 };
 
+//When the page changes 
 MN.changePage = function(page) {
 	
-	var page = page+"_page";
+	var page = "#"+page+"_page";
 
-	if(page == "album_page"){
+	if(page == "#album_page"){
 		this.getApi();
-	}
+	};
 
-	var newpg = document.getElementById(page);
-	console.log(newpg);
-	$(newpg).show();
-	$(newpg).siblings().hide();
-}
+
+	var $newpg = $(page);	
+	$($newpg).show();
+	$($newpg).siblings().hide();
+};
 
 
 MN.addEventListener = function(){
-	//this.li.removeEventListener("click", function(){}.bind(this));
-	this.lis.forEach(function(li) {
-		li.addEventListener("click", function(){
-			var id = li.getAttribute("id");
-			console.log(id);
-			this.changePage(id);
-		}.bind(this));
-	}.bind(this));
+	
+  $('li').on("click", function(li) {
+   		var $id = $(this).attr('id');
+		MN.changePage($id);
+    });
 
+};
 	
 
-}
+
 
 MN.getApi= function(){
 
@@ -66,10 +65,9 @@ MN.getApi= function(){
 	                var img = "<img src="+result.items[i].images[1].url+" height="+result.items[i].images[1].height+" width="+result.items[i].images[1].width+">"
 	               	var nameCol = name + "<br/>" + link + "<br/><br/>"+ img+ "<br/><br/><br/><br/>";
 					$(".artistInfo").append(nameCol); 
-				}
-           })
+				};
+           });
 	   }
 	});
-
-}
+};
 
