@@ -36,13 +36,16 @@ footer{
 
 
 }
+a:-webkit-any-link{
+color:red;
+}
 
 section.full-width-para{
 	text-align: left;
 	margin-top: 40%;
 	padding-top:3%;
 	padding-bottom: 3%;
-	color: #1d1a1a;
+	color: #1d1a1a !important;
 	/*padding-left: 0.5%;*/
 	background:rgb(167, 167, 167);
 	/*background-color: #a3acb5;*/
@@ -383,7 +386,7 @@ input[type=checkbox]:checked ~ #menu{
 
 }
 
-.button {
+.button, input[type=submit] {
   display: inline-block;
   border-radius: 4px;
   background-color: #96dade;
@@ -447,6 +450,7 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
+
 
 #searchBtn{
 	background: #bd7b1b;

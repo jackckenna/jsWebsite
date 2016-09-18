@@ -1,9 +1,12 @@
+
 //Set the object 
 var MN = MN || {};
 
+
 //On load start initialize
 $(function() {  
-	MN.init();
+	MN.init(); 
+
 });
 
 
@@ -12,6 +15,7 @@ MN.init = function(){
 	this.domElementsSetup();
 	this.addEventListener();
 	this.scrollHeaderChange();
+
 };
 
 
@@ -31,6 +35,8 @@ MN.scrollHeaderChange = function(){
 //Elements from the DOM setup 
 MN.domElementsSetup = function(){
   	this.$lis = $("li");
+  	//asign accessToken 
+  	this.accessToken = "BQB9WShB4Wjr90_6QHUTlLOyAQo6mjMv0oqdYWa1juEQBzeQem1EFLXlGwj_YPvrqL-rARNWnAtu56YP0mJe74cPLyX_fzR4UkzGyWwS4wxNFRvW0iIFgrdKle9uCdyFOMFwhvFeii1NjAc5L8g9ALnquznnMA";
 
 };
 
@@ -70,14 +76,13 @@ MN.addEventListener = function(){
 
 
 MN.getApi= function(){
-
+	      
 	//asign accessToken 
-	var accessToken = "BQACdnnoo-eyhFQOgYaQdi4sEKOu7gAqV-DgjUpYXjF0S_M_HL_0m-QQKmVnx5pcAf5IPg98fXhO2v_WiGNN9u50TLwp7tLjxpOACYmhJTb4NIzS9GTXvNm8gZPcfzpH3Wzy9luuxJnQV5Y7-lPuwoZnWsmhrw";
 	//use AJAX to get the API
 	$.ajax({
 	   url: "https://api.spotify.com/v1/artists/3CGzpCMqpqHnafmn2PFQd9/albums",
 	   headers: {
-	       'Authorization': 'Bearer ' + accessToken
+	       'Authorization': 'Bearer ' + this.accessToken
 	   },
 	   success: function(result) {
 	   		//loop through each object and save the variables
@@ -86,9 +91,9 @@ MN.getApi= function(){
                 var avalibleMarket = result.items[i].available_markets;
                 if( avalibleMarket.indexOf('GB') > -1 ){
 	                var name = "<h3>Name:</h3> " + result.items[i].name;
-	                var link = "<h3>Spotify Listen:</h3> " + result.items[i].external_urls.spotify;
+	                var link = "<h3>Spotify Listen:</h3> <form action='" + result.items[i].external_urls.spotify+ "'><input type='submit' value='View Album'/></form>";
 	                var img = "<img src="+result.items[i].images[1].url+" height="+result.items[i].images[1].height+" width="+result.items[i].images[1].width+">"
-	               	var nameCol = name + "<br/>" + link + "<br/><br/>"+ img+ "<br/><br/><br/><br/>";
+	               	var nameCol = name + "<br/>" + link + "<br/><br/>"+ img+ "<br/><br/><br/><br/><hr>";
 	               	//append to the artist info div
 					$(".artistInfo").append(nameCol); 
 				};
@@ -97,33 +102,27 @@ MN.getApi= function(){
 	});
 };
 
-MN.searchAlbum= function(searchVal){
 
-	//https://api.spotify.com/v1/search?q=album:little%20hands%20artist:charlie%20simpson&type=album
+MN.searchAlbum= function(searchVal){
 	
 	var searchItm = searchVal;
 
-	//asign accessToken 
-	var accessToken = "d5c387cd05064605a5447afa82921b68";
 	//use AJAX to get the API
 	$.ajax({
 	   url: "https://api.spotify.com/v1/search?q=album:"+searchItm+"%20artist:charlie%20simpson&type=album",
 	   headers: {
-	       'Authorization': 'Bearer ' + accessToken
+	       'Authorization': 'Bearer ' + this.accessToken
 	   },
 	   success: function(result) {
-	   	console.log(result);
-
-                var artistReturnedResult = result.items;
-                var name = "<h3>Name:</h3> " + result.albums.items[0].name;
-                var link = "<h3>Spotify Listen:</h3> " + result.albums.items[0].external_urls.spotify;
-                var img = "<img src="+result.albums.items[0].images[1].url+" height="+result.albums.items[0].images[1].height+" width="+result.albums.items[0].images[1].width+">"
-               	var nameCol = name + "<br/>" + link + "<br/><br/>"+ img+ "<br/><br/><br/><br/>";
-               	//append to the artist info div
-               	
-               	console.log(nameCol);
-				$(".albumSearch").append(nameCol); 
-
+		   	console.log(result);
+	        var artistReturnedResult = result.items;
+	        var name = "<h3>Name:</h3> " + result.albums.items[0].name;
+	         var link = "<h3>Spotify Listen:</h3> <form action='" + result.albums.items[0].external_urls.spotify+ "'><input type='submit' value='View Album'/></form>";
+	        var img = "<img src="+result.albums.items[0].images[1].url+" height="+result.albums.items[0].images[1].height+" width="+result.albums.items[0].images[1].width+">"
+	       	var nameCol = name + "<br/>" + link + "<br/><br/>"+ img+ "<br/><br/><br/><br/>";
+	       	//append to the artist info div
+	       	console.log(nameCol);
+			$(".albumSearch").append(nameCol); 
 	   }
 	});
 };
