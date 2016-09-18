@@ -11,6 +11,21 @@ $(function() {
 MN.init = function(){
 	this.domElementsSetup();
 	this.addEventListener();
+	this.scrollHeaderChange();
+};
+
+
+MN.scrollHeaderChange = function(){
+
+	$(document).scroll(function() { 
+        scroll_pos = $(this).scrollTop();
+        if(scroll_pos > 810) {
+        	$("header").css('background-color', '#0c0c0c');
+        } 
+        else{
+        	$("header").css('background-color', 'rgba(255,255,255,0.3)');
+        }
+    });
 };
 
 //Elements from the DOM setup 
@@ -43,6 +58,12 @@ MN.addEventListener = function(){
 		MN.changePage($id);
     });
 
+    $('#searchBtn').on("click", function(li) {
+   		var $id = $(this).attr('id');
+   		var $value = $('#searchBox').val();
+		MN.searchAlbum($value);
+    });
+
 };
 	
 
@@ -51,7 +72,7 @@ MN.addEventListener = function(){
 MN.getApi= function(){
 
 	//asign accessToken 
-	var accessToken = "e0213fed63364b669aba9116bb89d9d5";
+	var accessToken = "BQACdnnoo-eyhFQOgYaQdi4sEKOu7gAqV-DgjUpYXjF0S_M_HL_0m-QQKmVnx5pcAf5IPg98fXhO2v_WiGNN9u50TLwp7tLjxpOACYmhJTb4NIzS9GTXvNm8gZPcfzpH3Wzy9luuxJnQV5Y7-lPuwoZnWsmhrw";
 	//use AJAX to get the API
 	$.ajax({
 	   url: "https://api.spotify.com/v1/artists/3CGzpCMqpqHnafmn2PFQd9/albums",
@@ -75,4 +96,36 @@ MN.getApi= function(){
 	   }
 	});
 };
+
+MN.searchAlbum= function(searchVal){
+
+	//https://api.spotify.com/v1/search?q=album:little%20hands%20artist:charlie%20simpson&type=album
+	
+	var searchItm = searchVal;
+
+	//asign accessToken 
+	var accessToken = "d5c387cd05064605a5447afa82921b68";
+	//use AJAX to get the API
+	$.ajax({
+	   url: "https://api.spotify.com/v1/search?q=album:"+searchItm+"%20artist:charlie%20simpson&type=album",
+	   headers: {
+	       'Authorization': 'Bearer ' + accessToken
+	   },
+	   success: function(result) {
+	   	console.log(result);
+
+                var artistReturnedResult = result.items;
+                var name = "<h3>Name:</h3> " + result.albums.items[0].name;
+                var link = "<h3>Spotify Listen:</h3> " + result.albums.items[0].external_urls.spotify;
+                var img = "<img src="+result.albums.items[0].images[1].url+" height="+result.albums.items[0].images[1].height+" width="+result.albums.items[0].images[1].width+">"
+               	var nameCol = name + "<br/>" + link + "<br/><br/>"+ img+ "<br/><br/><br/><br/>";
+               	//append to the artist info div
+               	
+               	console.log(nameCol);
+				$(".albumSearch").append(nameCol); 
+
+	   }
+	});
+};
+
 

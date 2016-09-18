@@ -119,6 +119,28 @@ nav h1{
 
 }
 
+
+.half-width-image_right{
+	width:50%;
+	height: 600px;
+
+	display: inline-block;
+	float: right;
+}
+
+.half-width-para_left{
+	width:50%;
+	height: 600px;
+	background:rgb(167, 167, 167);
+
+	/*padding-left: 5%;*/
+
+	display: inline-block;
+	float: left;
+
+
+}
+
 #front_img{
 	width:100%;
 	height: 100%;
@@ -185,6 +207,7 @@ li a {
 li:hover a {
 	/*background: #4a4b4e;*/
 	color:rgb(167, 167, 167);
+	cursor: pointer;
 }
 
 /*Style for dropdown links*/
@@ -312,6 +335,22 @@ input[type=checkbox]:checked ~ #menu{
 
 	}
 
+	.half-width-image_right{
+		width:100%;
+		display: inline-block;
+	}
+
+	.half-width-para_left{
+		width:100%;
+		width:100%;
+		height: 400px;
+		background: #fff;
+		display: inline-block;
+
+
+	}
+
+
 	.contain{
 		margin-left: 5%;
 	}
@@ -384,12 +423,40 @@ input[type=checkbox]:checked ~ #menu{
   right: 0;
 }
 
-/*forms*/
-input[type=text], input[type=email]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+.input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text] {
+    width: 630px;
     box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+#searchBtn{
+	background: #bd7b1b;
+	padding: 12px 20px 12px 40px;
+	border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 textarea {
@@ -404,7 +471,7 @@ textarea {
 }
 
 #search .input[type=text] {
-    width: 130px;
+    width: 630px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -447,7 +514,7 @@ hr{
 
 }
 
-.album_title{
+.album_title, .albumSearch{
 	text-align: center;
 	padding-bottom: 5%;
 
