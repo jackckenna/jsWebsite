@@ -76,8 +76,7 @@ MN.addEventListener = function(){
 
 
 MN.getApi= function(){
-	      
-	//asign accessToken 
+	    
 	//use AJAX to get the API
 	$.ajax({
 	   url: "https://api.spotify.com/v1/artists/3CGzpCMqpqHnafmn2PFQd9/albums",
@@ -106,7 +105,6 @@ MN.getApi= function(){
 MN.searchAlbum= function(searchVal){
 	
 	var searchItm = searchVal;
-
 	//use AJAX to get the API
 	$.ajax({
 	   url: "https://api.spotify.com/v1/search?q=album:"+searchItm+"%20artist:charlie%20simpson&type=album",
