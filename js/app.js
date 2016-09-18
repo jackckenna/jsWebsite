@@ -12,7 +12,7 @@ $(function() {
 
 //Initialize startup functions
 MN.init = function(){
-	this.domElementsSetup();
+	this.elementsSetup();
 	this.addEventListener();
 	this.scrollHeaderChange();
 
@@ -33,7 +33,7 @@ MN.scrollHeaderChange = function(){
 };
 
 //Elements from the DOM setup 
-MN.domElementsSetup = function(){
+MN.elementsSetup = function(){
   	this.$lis = $("li");
   	//asign accessToken 
   	this.accessToken = "BQB9WShB4Wjr90_6QHUTlLOyAQo6mjMv0oqdYWa1juEQBzeQem1EFLXlGwj_YPvrqL-rARNWnAtu56YP0mJe74cPLyX_fzR4UkzGyWwS4wxNFRvW0iIFgrdKle9uCdyFOMFwhvFeii1NjAc5L8g9ALnquznnMA";
