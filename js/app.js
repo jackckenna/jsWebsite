@@ -36,8 +36,7 @@ MN.scrollHeaderChange = function(){
 MN.elementsSetup = function(){
   	this.$lis = $("li");
   	//asign accessToken 
-  	this.accessToken = "BQB9WShB4Wjr90_6QHUTlLOyAQo6mjMv0oqdYWa1juEQBzeQem1EFLXlGwj_YPvrqL-rARNWnAtu56YP0mJe74cPLyX_fzR4UkzGyWwS4wxNFRvW0iIFgrdKle9uCdyFOMFwhvFeii1NjAc5L8g9ALnquznnMA";
-
+  	this.accessToken = "BQCJh0buxOXjD-BkgbXZk_YF7Nti2STKeFFS-fTeIZjU3PXtDqGbCQ4OWYLgv2xinpJJPmJi4v3qWtJp8Lz6VUdE8JAzGdeCvqJ7IZn233nu2Nr-zb3IHIvZ3OZ3VIdTNf0TzoBA74UR4LFh3t-JGVne4PMPMA";
 };
 
 //When the page changes 
